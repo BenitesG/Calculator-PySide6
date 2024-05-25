@@ -291,7 +291,7 @@ class ButtonsGrid(QGridLayout):
         self._left = result
         self.display.setFocus()
         
-        if result == 'Error' or 'Pop' or 'Undefined result':
+        if result == 'Error' or result == 'Pop' or result == 'Undefined result':
             self._left = None
     
     @Slot()
