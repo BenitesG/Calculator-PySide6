@@ -230,7 +230,6 @@ class ButtonsGrid(QGridLayout):
         displayText = self.display.text() 
         
         if not isValidNumber(displayText) and self._left is None:
-            self._showError("No numbers to clear")
             return
         
         self._left = None
@@ -247,7 +246,6 @@ class ButtonsGrid(QGridLayout):
         
         # If the people clicked in the operator without a method
         if not isValidNumber(displayText) and self._left is None:
-            self._showError("You didn't select numbers")
             return
 
         # If have something in the left side
@@ -264,7 +262,6 @@ class ButtonsGrid(QGridLayout):
         displayText = self.display.text()
         
         if not isValidNumber(displayText):
-            self._showError("You didn't select a number")
             return
         
         if self._left is None:
@@ -283,10 +280,10 @@ class ButtonsGrid(QGridLayout):
             else:
                 result = eval(self.equation)
         except ZeroDivisionError:
-            self._showError('Undefined result')
+            result = 'Undefined result'
          
         except OverflowError:
-            self._showError('Pop')        
+            result = 'Pop'        
                            
         self.display.clear()
         self.info.setText(f'{self.equation} = {result}')
@@ -294,7 +291,7 @@ class ButtonsGrid(QGridLayout):
         self._left = result
         self.display.setFocus()
         
-        if result == 'Error':
+        if result == 'Error' or 'Pop' or 'Undefined result':
             self._left = None
     
     @Slot()
