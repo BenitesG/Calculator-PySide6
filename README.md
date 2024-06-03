@@ -20,10 +20,10 @@ pip install pyinstaller
 
 To turn into a packet you will use this code for windows:
 
-pyinstaller --name='Archivename' --noconfirm --noconsole --onefile --add-data='files/;files' --icon='icon dict' --log-level=WARN 'main.py'
+pyinstaller --name='Archivename' --noconfirm --noconsole --onefile --add-data='files/;files' --icon='icon directory' --log-level=WARN 'main.py'
 
 For macOS:
 
-pyinstaller --name='Archivename' --noconfirm --noconsole --onefile --add-data='files/:files' --icon='icon dict' --log-level=WARN 'main.py'
+pyinstaller --name='Archivename' --noconfirm --noconsole --onefile --add-data='files/:files' --icon='icon directory' --log-level=WARN 'main.py'
 
-(in data the directory will change the ; to :)
+(in data the directory will change the ; to :.)
