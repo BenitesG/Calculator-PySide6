@@ -1,5 +1,5 @@
 import sys
-from display import WINDOW_ICON_PATH, Display, Info, ButtonsGrid
+from interface import WINDOW_ICON_PATH, Display, Info, ButtonsGrid
 from PySide6.QtGui import QIcon
 from configSetup import MainWindow
 from styles import setupTheme
